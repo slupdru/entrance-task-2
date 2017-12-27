@@ -1,20 +1,8 @@
-@font-face{
-  font-family: 'HelveticaNeue-Medium';
-  src: url('../fonts/HelveticaNeueCyr-Light.otf');
-  font-weight: 300;
-  font-style: normal;
-  }
-@font-face{
-  font-family: 'HelveticaNeue-Medium';
-  src: url('../fonts/HelveticaNeueCyr-Medium.otf');
-  font-weight: 500;
-  font-style: normal;
-  }
 *{
   margin: 0px;
 }
 body{
-  font-family: "HelveticaNeue-Medium", "sans-serif";
+  font-family:BlinkMacSystemFont,-apple-system,Helvetica Neue,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,sans-serif;
 }
 
 .header_container{
@@ -33,9 +21,19 @@ body{
   text-decoration: none;
   text-align: center;
   border-radius:4px;
-  letter-spacing: 0.5px;
-  font-weight: lighter;
+  letter-spacing: 0px;
+  font-weight: 500;
   margin-right:24px;
+  cursor: pointer;
+}
+.header_button:hover{
+  background: #0059FF;
+}
+.header_button:active{
+  background: #0B00FF;
+}
+.header_button:disabled{
+  background: #E9ECEF;
 }
 .header_logo{
   margin-left:24.6px;
@@ -75,6 +73,7 @@ body{
   color: #000000;
   letter-spacing: 0px;
   margin: 4px 15px;
+  font-weight: 500;
 }
 .time-container_hours{
   font-size: 11px;
@@ -83,6 +82,7 @@ body{
   display: block;
   flex-grow: 1;
   text-align: right;
+  font-weight: bold;
 }
 .timebar_time-container{
  margin-top:3px;
@@ -102,7 +102,6 @@ body{
 .floor{
   display: flex;
   flex-grow: 1;
-  z-index: 0;
   flex-direction: column;
   
 }
@@ -114,6 +113,8 @@ body{
   color: #858E98;
   letter-spacing: 0.4px;
   margin-top:24px;
+  font-weight:bold;
+  text-transform: uppercase;
 }
 .floor_name.floor_name-first{
   margin-top: 22px;
@@ -123,15 +124,15 @@ body{
   font-size: 15px;
   line-height: 17px;
   margin-top: 2px;
+  font-weight:500;
 }
 .room_subtitile{
   font-size: 13px;
   line-height: 17px;
-  font-weight: lighter;
 }
 
 .room,.floor_name{
-  padding-left: 25px;
+  margin-left: 25px;
   background: white;
   background-clip:border-box;
 }
@@ -147,14 +148,14 @@ body{
   display:flex;
   margin-left: -35px;
   margin-right:10px;
-  z-index: 1;
+  z-index: 0;
 
 }
 .linear-back_cell{
   border-right:1px #E9ECEF solid;
   flex-grow: 1;
   height: 682px;
-  z-index: 3;
+  z-index: 0;
 }
 .linear-back_cell.double-line{
   border-left:1px #E9ECEF solid;
@@ -176,34 +177,43 @@ body{
 .leftbar{
   width:245px;
   background: white;
-  z-index: 3;
+  z-index: 2;
 }
 .floor_row.floor_row-tablet{
-  height: 34px;
+  height: 28px;
   display: flex;
-  flex-grow:1;
-  margin-left: -35px;
+  flex-grow:0;
+  margin-left: -36px;
   margin-right: 10px;
   position: relative;
+  margin-top: 25px;
 }
 .table-container_rows{
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  z-index: 1;
 }
 .floor_row.floor_row-tablet.floor_row-first{
-  background: #F6F7F9;
+  margin-top: 10px;
 }
+.floor_row.floor_row-tablet.floor_row-first + .floor_row.floor_row-tablet{
+  margin-top: 8px;
+}
+
 .floor_table-hour{
   flex-grow: 1;
   display: flex;
+  position: relative;
+  border-right: 1px #E9ECEF solid;
 }
 .table-hour_1-block{
   background: #D5DFE9;
   height: 100%;
+  width: 100%;
 }
 .table-hour_2-block{
-  background: #F6F7F9;
+  background: #fff;
   height: 100%;
 }
 .table-hour_3-block{
@@ -212,18 +222,143 @@ body{
 }
 .floor_lasthour{
   position: absolute;
-  height: 37px;
+  height: 28px;
   width: 10px;
   right: -10px;
 }
-/* 1 строка */
-.floor_row:nth-of-type(2) .table-hour_1-block{
+.floor_button{
+  position: relative;
   width: 100%;
+  font-size: 25px;
+  background: #2B50FD;
+  border-radius: 2px;
+  display: none;
+  cursor:pointer;
 }
-.floor_row:nth-of-type(2) .floor_lasthour{
+.floor_button:active{
+  background: #1D00FE;
+}
+.floor_button>span{
+ position: absolute;
+ top:50%;
+ left: 50%;
+transform: translate(-50%, -20px);
+ color: white;
+}
+
+
+.floor_row:nth-of-type(2) .floor_lasthour, .floor_row:nth-of-type(3) .floor_lasthour{
   background: #D5DFE9;
 }
 .floor_row_completed .room_title, .floor_row_completed .room_subtitile{
   color: #858E98;
 
 }
+.floor_table-hour:not(.floor_table-hour_completed)>.table-hour_1-block{
+  width: 0px;
+}
+.floor_table-hour:not(.floor_table-hour_completed)>.table-hour_2-block{
+  width: 100%;
+}
+.floor_table-hour:not(.floor_table-hour_completed):hover .table-hour_2-block{
+  display: none;
+}
+.floor_table-hour:not(.floor_table-hour_completed):hover .floor_button{
+  display: block;
+}
+.floor_table-hour.floor_table-hour_nobutton:hover .table-hour_2-block{
+  display: block;
+}
+.floor_table-hour.floor_table-hour_nobutton:hover .floor_button{
+  display: none;
+}
+
+.modal-in-cell{
+background: #FFFFFF;
+box-shadow: 0 1px 16px 0 rgba(0,44,92,0.28);
+border-radius: 8px;
+width:338px;
+height: 114.8px;
+position: absolute;
+top:28px;
+z-index: 3;
+transform: translateX(-135px);
+}
+.display_none{
+  display: none;
+}
+.modal-in-cell::after{
+  content: ''; 
+  position: absolute;
+  left: 164px; top: -18px;
+  border: 8px solid transparent;
+  border-bottom: 10px solid white;
+}
+.modal-in-cell_closeicon{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  height: 24px;
+  width: 24px;
+  background: #E9ECEF;
+  border-radius: 100px;
+  display: flex;
+  cursor: pointer;
+}
+
+.modal-in-cell_closeicon:hover img{
+  opacity: 1;
+}
+.modal-in-cell_closeicon img{
+  opacity: 0.43;
+}
+.modal-in-cell_closeicon>a{
+  margin: auto;
+}
+.modal-in-cell_title{
+  margin-top: 14.8px;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+.modal-in-cell_subtitle{
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 17px;
+  margin-bottom: 20px;
+}
+.modal-in-cell_container{
+  margin-left: 16px;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 17px;
+}
+.modal-in-cell_users>img{
+  border-radius: 100%;
+  background: black;
+  margin-right: 8px;
+}
+.modal-in-cell_users{
+  display: flex;
+}
+.modal-in-cell_users>span{
+  transform: translateY(2px);
+}
+.modal-in-cell_users>span:nth-last-of-type(1){
+  color: #858E98;
+  margin-left: 2px;
+}
+.floor_row.floor_row-tablet:nth-child(3) .floor_table-hour:nth-of-type(6)>.table-hour_1-block{
+ width: 10%;
+}
+.floor_row.floor_row-tablet:nth-child(3) .floor_table-hour:nth-of-type(6)>.table-hour_2-block{
+  width: 90%;
+ }
+ .floor_row.floor_row-tablet:nth-child(3) .floor_table-hour:nth-of-type(9)>.table-hour_2-block{
+  width: 10%;
+
+ }
+ .floor_row.floor_row-tablet:nth-child(3) .floor_table-hour:nth-of-type(9)>.table-hour_1-block:nth-of-type(3){
+   width: 90%;
+  }
