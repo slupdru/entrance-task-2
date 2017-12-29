@@ -1,5 +1,6 @@
 *{
   margin: 0px;
+  box-sizing: border-box;
 }
 body{
   font-family:BlinkMacSystemFont,-apple-system,Helvetica Neue,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,sans-serif;
@@ -14,10 +15,10 @@ body{
 .header_button{
   width: 140px;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 36px;
   background: #007DFF;
   color: white;
-  padding: 10px 0px;
+  height: 36px;
   text-decoration: none;
   text-align: center;
   border-radius:4px;
@@ -25,6 +26,7 @@ body{
   font-weight: 500;
   margin-right:24px;
   cursor: pointer;
+  user-select: none;
 }
 .header_button:hover{
   background: #0059FF;
@@ -133,7 +135,6 @@ body{
 
 .room,.floor_name{
   margin-left: 25px;
-  background: white;
   background-clip:border-box;
 }
 .floor-line{
@@ -195,7 +196,7 @@ body{
   z-index: 1;
 }
 .floor_row.floor_row-tablet.floor_row-first{
-  margin-top: 10px;
+  margin-top: 14px;
 }
 .floor_row.floor_row-tablet.floor_row-first + .floor_row.floor_row-tablet{
   margin-top: 8px;
@@ -234,6 +235,7 @@ body{
   border-radius: 2px;
   display: none;
   cursor:pointer;
+  user-select: none;
 }
 .floor_button:active{
   background: #1D00FE;
@@ -362,3 +364,29 @@ transform: translateX(-135px);
  .floor_row.floor_row-tablet:nth-child(3) .floor_table-hour:nth-of-type(9)>.table-hour_1-block:nth-of-type(3){
    width: 90%;
   }
+.timebar_mobile-container{
+  display: flex;
+}
+.timebar_date-container{
+  display: none;
+}
+.timebar_date-container.timebar_date-container-mobile{
+  display: none;
+}
+.floor_mobile-title{
+  display: none;
+  position: absolute;
+  z-index: 3;
+  font-weight: bold;
+  font-size: 11px;
+  color: #262626;
+  letter-spacing: 0.4px;
+  left: 10px;
+  height: 24px;
+  line-height: 24px;
+  width: 98px;
+  background: white;
+  box-shadow: 0 1px 8px 0 rgba(0,44,92,0.28);
+  border-radius: 4px;
+  text-align: center;
+}

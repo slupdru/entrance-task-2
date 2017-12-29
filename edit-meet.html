@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/new-meet.css">
     <link rel="stylesheet" href="styles/new-meet-mobile.css">
+    <link rel="stylesheet" href="styles/edit-meet.css">
+    <link rel="stylesheet" href="styles/edit-meet-mobile.css">
     <title>Document</title>
 </head>
 <body class="body-new-meet">
@@ -19,13 +21,16 @@
         <div class="main_background">
         <div class="nmeet-container">
             <div class="title-line">
-                <div class="title-line_title">Новая встреча</div>
+                <div class="title-line_title">Редактирование встречи</div>
                 <a class="title-line_exit-button"><img src="assets/close.svg" alt=""></a>
             </div>
             <div class="theme-line">
                 <div class="theme">
                     <div class="theme_title">Тема</div>
-                    <input class="theme_input" placeholder="О чём будете говорить?" type="text">
+                    <div class="theme_input-con">
+                        <input class="theme_input" value="Тестовое задание ШРИ" type="text">
+                        <img class="theme_close-icon" src="assets/close.svg" alt="">
+                    </div>
                 </div>
                 <div class="time">
                     <div class="date">
@@ -90,6 +95,13 @@
             </div>
         </div>
     </div>
+    <div class="members-line_line"></div>
+    <div class="delete-line">
+    <div class="nmeet-container nmeet-container_delete">
+        <a class="delete_button" >Удалить встречу</a>
+    </div>
+    </div>
+    <div class="members-line_line"></div>
     </main>
     <footer class="footer-new-meet">
         <div class="message-line">
@@ -97,7 +109,8 @@
         </div>
         <div class="buttons-container">
             <a class="buttons-container_cancel">Отмена</a>
-            <a class="header_button">Создать встречу</a>
+            <a class="buttons-container_delete">Удалить встречу</a>
+            <a class="buttons-container_save">Сохранить</a>
         </div>
     </footer>
     <script src="scripts/new-meet.js"></script>

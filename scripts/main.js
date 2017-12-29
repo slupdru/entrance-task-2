@@ -61,6 +61,10 @@ function lightTitile(event){
 }
 function activeTitileDown(event){
     let target = event.target;
+    if ((target.classList.contains('link'))||(target.parentNode.classList.contains('link'))){
+        location.href = 'edit-meet.html';
+
+    }
     coordsOfTitle(target,'#1D00FE');
 }
 

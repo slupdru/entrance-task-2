@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style-mobile.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,15 +13,26 @@
     <header>
         <div class="header_container">
           <img class="header_logo" src="assets/logo.svg" alt="">
-          <a class="header_button">Создать встречу</a>
+          <a href="new-meet.html" class="header_button">Создать встречу</a>
         </div>
+        <div class="timebar_date-container timebar_date-container-mobile">
+            <div class="timebar_mobile-container">
+            <div class ="timebar_arrow-container">
+              <img class="timebar_img_left" src="assets/arrow2.svg" alt="">
+            </div>
+            <a class="timebar_date">14 дек · Сегодня</a>
+            <div class =timebar_arrow-container>
+                <img class="timebar_img_right" src="assets/arrow.svg" alt="">
+            </div>
+          </div>
+          </div>
       </header>
 
       <main>
           <div class="timebar">
             <div class="timebar_main-container">
               <div class="timebar_date-container">
-
+                <div class="timebar_mobile-container">
                 <div class ="timebar_arrow-container">
                   <img class="timebar_img_left" src="assets/arrow2.svg" alt="">
                 </div>
@@ -29,24 +41,25 @@
                     <img class="timebar_img_right" src="assets/arrow.svg" alt="">
                 </div>
               </div>
+              </div>
 
             <div class="timebar_time-container">
-              <span class="time-container_hours">8:00</span>
-              <span class="time-container_hours">9</span>
-              <span class="time-container_hours">10</span>
-              <span class="time-container_hours">11</span>
-              <span class="time-container_hours">12</span>
-              <span class="time-container_hours">13</span>
-              <span class="time-container_hours">14</span>
-              <span class="time-container_hours">15</span>
-              <span class="time-container_hours">16</span>
-              <span class="time-container_hours">17</span>
-              <span class="time-container_hours">18</span>
-              <span class="time-container_hours">19</span>
-              <span class="time-container_hours">20</span>
-              <span class="time-container_hours">21</span>
-              <span class="time-container_hours">22</span>
-              <span class="time-container_hours">23</span>
+                <span class="time-container_hours">8:00</span>
+                <span class="time-container_hours">9</span>
+                <span class="time-container_hours">10</span>
+                <span class="time-container_hours">11</span>
+                <span class="time-container_hours">12</span>
+                <span class="time-container_hours">13</span>
+                <span class="time-container_hours">14</span>
+                <span class="time-container_hours">15</span>
+                <span class="time-container_hours">16</span>
+                <span class="time-container_hours">17</span>
+                <span class="time-container_hours">18</span>
+                <span class="time-container_hours">19</span>
+                <span class="time-container_hours">20</span>
+                <span class="time-container_hours">21</span>
+                <span class="time-container_hours">22</span>
+                <span class="time-container_hours">23</span>
             </div>
         </div>
       </div>
@@ -60,7 +73,7 @@
               <div class="floor_row floor_row_completed">
                   <div class="room">
                     <div class="room_title">Ржавый Фред</div>
-                    <div class="room_subtitile">3—6 челов</div>
+                    <div class="room_subtitile">3—6 человек</div>
                   </div>
               </div>
               <div class="floor_row">
@@ -150,7 +163,7 @@
                   </div>
 
                   <div class="floor_row floor_row-tablet">
-
+                    <div class="floor_mobile-title">Ржавый Фред</div>
                     <div class="floor_lasthour"></div>
                     <div class="floor_table-hour floor_table-hour_completed row_1">
                         <div class="table-hour_1-block"></div>
@@ -192,7 +205,7 @@
                       <div class="table-hour_2-block"></div>
                       <div class="table-hour_3-block"></div>
                       <div class="modal-in-cell display_none" id='meeting_1'>
-                          <div class="modal-in-cell_closeicon"><a><img src="assets/edit.svg" alt=""></a></div>
+                          <div class="modal-in-cell_closeicon"><a class = "link" src="edit-meet.html"><img class = "link" src="assets/edit.svg" alt=""></a></div>
                           <div class="modal-in-cell_container">
                             <div class="modal-in-cell_title">Рассуждения о высоком</div>
                             <div class="modal-in-cell_subtitle">14 декабря, 7:30—23:00  ·  Ржавый Фред</div>
@@ -264,7 +277,7 @@
                         <div class="table-hour_2-block"></div>
                         <div class="table-hour_3-block"></div>
                         <div class="modal-in-cell display_none" id='meeting_2'>
-                            <div class="modal-in-cell_closeicon"><a><img src="assets/edit.svg" alt=""></a></div>
+                            <div class="modal-in-cell_closeicon"><a class = "link" src="edit-meet.html"><img class = "link" src="assets/edit.svg" alt=""></a></div>
                             <div class="modal-in-cell_container">
                               <div class="modal-in-cell_title">Рассуждения о низком</div>
                               <div class="modal-in-cell_subtitle">14 декабря, 15:00—17:00  ·  Жёлтый дом</div>
@@ -276,19 +289,19 @@
                         <div class="table-hour_1-block"></div>
                         <div class="table-hour_2-block"></div>
                         <div class="table-hour_3-block"></div>
-                        <a class="floor_button floor_button_button-line1"><span>+</span></a>
+                        <a href="new-meet.html" class="floor_button floor_button_button-line1"><span>+</span></a>
                     </div>
                     <div class="floor_table-hour row_2">
                         <div class="table-hour_1-block"></div>
                         <div class="table-hour_2-block"></div>
                         <div class="table-hour_3-block"></div>
-                        <a class="floor_button floor_button_button-line1"><span>+</span></a>
+                        <a href="new-meet.html" class="floor_button floor_button_button-line1"><span>+</span></a>
                     </div>
                     <div class="floor_table-hour row_2">
                         <div class="table-hour_1-block"></div>
                         <div class="table-hour_2-block"></div>
                         <div class="table-hour_3-block"></div>
-                        <a class="floor_button floor_button_button-line1"><span>+</span></a>
+                        <a href="new-meet.html" class="floor_button floor_button_button-line1"><span>+</span></a>
                     </div>
                     <div class="floor_table-hour floor_table-hour_nobutton row_2">
                         <div class="table-hour_1-block"></div>
@@ -364,6 +377,6 @@
       </div>
 
       </main>
-<script src="main.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
