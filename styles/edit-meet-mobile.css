@@ -57,4 +57,11 @@
         color: #FF3333;
         cursor: pointer;
     }
+    .modal-new-meet.modal-delete .buttons-container_cancel{
+        display: inline-block;
+        margin-bottom: 0px;
+    }
+    .modal-new-meet.modal-delete .buttons-container_cancel:last-of-type{
+        width: 111px;
+    }
 }

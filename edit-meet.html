@@ -9,9 +9,21 @@
     <link rel="stylesheet" href="styles/new-meet-mobile.css">
     <link rel="stylesheet" href="styles/edit-meet.css">
     <link rel="stylesheet" href="styles/edit-meet-mobile.css">
+    <link rel="stylesheet" href="styles/style-mobile.css">
     <title>Document</title>
 </head>
 <body class="body-new-meet">
+        <div class="modal-new-meet modal-delete">
+                <div class="modal-new-meet_panel">
+                    <div class="modal-new-meet_container">
+                        <img class="modal-new-meet_icon" src="assets/emoji1.svg" alt="">
+                        <div class="modal-new-meet_title">Встреча будет</div>
+                        <div class="modal-new-meet_title">удалена безвозвратно</div>
+                        <a class="buttons-container_cancel">Отмена</a>
+                        <a class="buttons-container_cancel">Удалить</a>
+                    </div>
+                </div>
+              </div>
     <header>
         <div class="header_container header_container_meet">
           <img class="header_logo" src="assets/logo.svg" alt="">
@@ -108,11 +120,12 @@
             <div class="message-line_message">Выберите переговорку</div>
         </div>
         <div class="buttons-container">
-            <a class="buttons-container_cancel">Отмена</a>
+            <a href="index.html" class="buttons-container_cancel">Отмена</a>
             <a class="buttons-container_delete">Удалить встречу</a>
-            <a class="buttons-container_save">Сохранить</a>
+            <a href="index.html" class="buttons-container_save">Сохранить</a>
         </div>
     </footer>
     <script src="scripts/new-meet.js"></script>
+    <script src="scripts/edit-meet.js"></script>
 </body>
 </html>

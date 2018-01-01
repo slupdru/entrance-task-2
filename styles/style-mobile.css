@@ -2,8 +2,6 @@
     main{
         overflow: auto;
     }
-    body{
-    }
     .leftbar .floor{
         background: #F6F7F9;
     }
@@ -119,8 +117,6 @@
     .linear-back_cell, .linear-back, .table-container{
         height: 614px;
     }
-    .linear-back{
-    }
     .table-container{
         flex-grow: 0;
     }
@@ -158,5 +154,74 @@
     }
     .floor_button>span{
         display: none;
+    }
+    .modal-in-cell{
+        height: 136.8px;
+        width: 360px;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 35;
+
+    }
+    .modal-in-cell::after{
+        left: 231px;
+        top: -17px;
+        border: 7px solid transparent;
+        border-bottom: 10px solid white;
+    }
+    .floor_table-hour{
+        position: static;
+    }
+    .modal-in-cell#meeting_1{
+        top: 285px;
+    }
+    .modal-in-cell#meeting_2, .modal-in-cell#meeting_3{
+        top: 339px;
+    }
+    .modal-in-cell#meeting_4, .modal-in-cell#meeting_5{
+        top:402px;
+    }
+    .modal-in-cell#meeting_6{
+        top: 462px;
+    }
+    .modal-in-cell_title{
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+    .modal-in-cell_subtitle{
+        font-size: 15px;
+    }
+    .modal-in-cell_users img {
+        width: 32px;
+        height: 32px;
+    }
+    .modal-in-cell_users span {
+       font-size: 15px;
+    }
+    .modal-in-cell_users>span{
+        transform: translateY(6px);
+    }
+    .leftbar{
+        z-index: 1;
+    }
+    .modal-new-meet_panel{
+        width: 360px;
+        height: 267px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 330px;
+    }
+    .modal-new-meet_floor{
+        margin-bottom: 31px;
+    }
+    .modal-new-meet_button{
+        width: 120px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 15px;
+    }
+    .modal-new-meet{
+        background: rgba(0,16,33,0.80);
     }
 }
