@@ -1,3 +1,7 @@
+let calendars = document.getElementsByClassName('calendar');
+let body = document.getElementsByTagName('body');
+let floorMobileTitles = document.getElementsByClassName('floor_mobile-title');
+let main = document.getElementsByTagName('main');
 let table = document.getElementsByClassName('table-container_rows');
 let meetings = document.getElementsByClassName('modal-in-cell');
 let rows =[];
@@ -80,11 +84,41 @@ function hoverCompletedCells(event){
                 }
               break;
             case 1:
+            if (targetNumber[1])
               break;
           }
     }
 }
-
+function lightCells(targetcel, color){
+    switch (targetcel[0]) {
+        case 0:
+            for (let j = 0; j < 16; j++){
+            rows[0][j].childNodes[1].style.background = color;
+            }
+          break;
+        case 1:
+        if (targetcel[1]<=4){
+            for (let j = 0; j < 16; j++){
+                rows[0][j].childNodes[1].style.background = color;
+                }
+        }
+          break;
+      }
+}
+function bodyClick(event){
+    if ((event.target.id === 'timebar_date1')||(event.target.id === 'timebar_date2')){
+        calendars[0].style.display='block';
+        calendars[1].style.display='block';
+        event.target.style.color='#0070E0';
+    }
+    else{
+        calendars[0].style.display='none';
+        calendars[1].style.display='none';
+        for (let i = 1; i < 3; i++){
+            document.getElementById(`timebar_date${i}`).style.color='#000000';
+        }
+    }
+}
 
 table[0].onclick = function(event) {
     let target = event.target;
@@ -110,7 +144,23 @@ table[0].onclick = function(event) {
     }
 };
 
-
+function scrollPage(){
+ let scrollLeft = main[0].scrollLeft;
+    if (scrollLeft>=180){
+        for (let i = 0; i < floorMobileTitles.length; i++){
+            floorMobileTitles[i].style.display='block';
+            floorMobileTitles[i].style.left=`${scrollLeft-170}px`;
+        }
+    }
+    else{
+        for (let i = 0; i < floorMobileTitles.length; i++){
+            floorMobileTitles[i].style.display='none';
+        }
+    }
+}
 table[0].addEventListener('mousedown', activeTitileDown);
 table[0].addEventListener('mouseover', lightTitile);
 table[0].addEventListener('mouseover', hoverCompletedCells);
+main[0].addEventListener('scroll', scrollPage);
+body[0].addEventListener('click', bodyClick)
+console.log(document.location.href);

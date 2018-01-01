@@ -1,9 +1,8 @@
 @media screen and (max-width: 850px) {
     main{
-        margin-top: 98px;
+        overflow: auto;
     }
     body{
-        overflow: auto;
     }
     .leftbar .floor{
         background: #F6F7F9;
@@ -67,7 +66,6 @@
         box-shadow: 0 1px 0 0 #E9ECEF;
     }
     header{
-        position: fixed;
         z-index: 5;
         background: white;
         width: 100vw;
@@ -138,5 +136,27 @@
     .floor_lasthour{
         height: 58px;
     }
+    .timebar_arrow-container{
+        height: 32px;
+        width: 32px;
+        position: relative;
+    }
+    .timebar_img_left, .timebar_img_right{
+        position: absolute;
+        height: 15.3px;
+        margin: 0;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
+    }
+    .timebar_date-container{
+        display: none;
+      }
+    .timebar_date-container.timebar_date-container-mobile{
+        display: flex;;
+    }
+    .floor_button>span{
+        display: none;
+    }
 }
