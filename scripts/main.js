@@ -77,6 +77,7 @@ function hoverCompletedCells(event){
     let target = event.target;
     let targetNumber = coordsOfTable(target); 
     if (targetNumber!== undefined){
+        lightCells(targetNumber,'rgba(0,0,0,0.12)', true);
         switch (targetNumber[0]) {
             case 0:
                 for (let j = 0; j < 16; j++){
@@ -108,7 +109,7 @@ function lightCells(targetcel, color, click){
                 if (click===true) {meetings[2].style.display = 'block';}
                 for (let j = 7; j < 16; j++){
                     rows[1][j].childNodes[1].style.background = color;
-                    rows[1][j].childNodes[3].style.background = color;
+                    rows[1][j].childNodes[5].style.background = color;
                     }
             }
           break;
@@ -134,18 +135,7 @@ table[0].onclick = function(event) {
     nullStyleOfMeetings();
     let targetNumber = coordsOfTable(target);
     if (targetNumber!== undefined){
-        table[0].removeEventListener('mouseover', hoverCompletedCells);
-        switch (targetNumber[0]) {
-            case 0:
-                meetings[0].style.display = 'block';
-                for (let j = 0; j < 16; j++){
-                rows[0][j].childNodes[1].style.background = '#98A9B9';
-                }
-              break;
-            case 1:
-                meetings[1].style.display = 'block';
-              break;
-          }
+        lightCells(targetNumber,'#98A9B9', true);
     }
     else{
         table[0].addEventListener('mouseover', hoverCompletedCells);
