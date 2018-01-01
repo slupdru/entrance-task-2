@@ -12,7 +12,7 @@ for (let i = 1; i < 10; i++){
 }
 
 function nullStyleOfMeetings(){
-    for (let i = 0; i < 2; i++){
+    for (let i = 0; i < meetings.length; i++){
         meetings[i].style.display = '';
         }
 }
@@ -89,19 +89,28 @@ function hoverCompletedCells(event){
           }
     }
 }
-function lightCells(targetcel, color){
+function lightCells(targetcel, color, click){
     switch (targetcel[0]) {
         case 0:
+           if (click===true) {meetings[0].style.display = 'block';}
             for (let j = 0; j < 16; j++){
             rows[0][j].childNodes[1].style.background = color;
             }
           break;
         case 1:
-        if (targetcel[1]<=4){
-            for (let j = 0; j < 16; j++){
-                rows[0][j].childNodes[1].style.background = color;
-                }
-        }
+            if (targetcel[1]<=4){
+                if (click===true) {meetings[1].style.display = 'block';}
+                for (let j = 0; j < 5; j++){
+                    rows[1][j].childNodes[1].style.background = color;
+                    }
+            }
+            if (targetcel[1]>=8){
+                if (click===true) {meetings[2].style.display = 'block';}
+                for (let j = 7; j < 16; j++){
+                    rows[1][j].childNodes[1].style.background = color;
+                    rows[1][j].childNodes[3].style.background = color;
+                    }
+            }
           break;
       }
 }
