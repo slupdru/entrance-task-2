@@ -20,3 +20,6 @@ function selectRoomFun(event){
         }
     }
 }
+
+// var input = document.getElementById("members_input");
+// new Awesomplete(input, {list: "#mylist"});

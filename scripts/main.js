@@ -19,7 +19,7 @@ function nullStyleOfMeetings(){
 }
 
 function coordsOfTable(event){
-   if ((event.parentNode.classList.contains('floor_table-hour_completed')) || (event.parentNode.classList.contains('floor_table-hour_nobutton')) ){
+   if ((event.parentNode.classList.contains('floor_table-hour'))){
         let targetNumber = [-1, -1];
         for (let i = 0; i < floorLasthours.length; i++){
             floorLasthours[i].style.background = '';
@@ -96,63 +96,134 @@ function hoverCompletedCells(event){
 
     }
 }
+function colorCells(rownum, j1, color, j2, lasthour, click, meetnum){
+    if (lasthour===true){floorLasthours[rownum].style.background = color;}
+    if (click===true) {meetings[meetnum].style.display = 'block';}
+    for (let j = j1; j <= j2; j++){
+        for (let k = 0; k < rows[rownum][j].childNodes.length; k++){
+            if  ((rows[rownum][j].childNodes[k].classList!==undefined)&&(rows[rownum][j].childNodes[k].classList.contains('table-hour_3-block'))||(rows[rownum][j].childNodes[k].classList!==undefined)&&(rows[rownum][j].childNodes[k].classList.contains('table-hour_1-block'))){
+                rows[rownum][j].childNodes[k].style.background = color;
+            }
+    }
+        }
+}
+
+
 function lightCells(targetcel, color, click){
     switch (targetcel[0]) {
 
         case 0:
-           if (click===true) {meetings[0].style.display = 'block';}
-            for (let j = 0; j < 16; j++){
-            rows[0][j].childNodes[1].style.background = color;
-            floorLasthours[0].style.background = color;
-            }
+        colorCells(0, 0, color, 15, true, click, 0);
         break;
 
         case 1:
             if (targetcel[1]<=5){
-                if (click===true) {meetings[1].style.display = 'block';}
-                for (let j = 0; j < 5; j++){
-                    rows[1][j].childNodes[1].style.background = color;
-                    }
+                colorCells(1, 0, color, 5, false, click, 1);
             }
-            if (targetcel[1]>=7){
-                floorLasthours[1].style.background = color;
-                if (click===true) {meetings[2].style.display = 'block';}
-                for (let j = 7; j < 16; j++){
-                    rows[1][j].childNodes[1].style.background = color;
-                    rows[1][j].childNodes[5].style.background = color;
-                    }
+           else if (targetcel[1]>=7){
+                colorCells(1, 7, color, 15, true, click, 2);
             }
         break;
 
         case 2:
             if (targetcel[1]<=5){
-                if (click===true) {meetings[3].style.display = 'block';}
-                for (let j = 0; j < 5; j++){
-                    rows[2][j].childNodes[1].style.background = color;
-                    }
+                colorCells(2, 0, color, 5, false, click, 3);
                 }
-            if (targetcel[1]>=7){
-                floorLasthours[2].style.background = color;
-                if (click===true) {meetings[4].style.display = 'block';}
-                for (let j = 6; j < 16; j++){
-                    for (let k = 0; k < rows[2][j].childNodes.length; k++){
-                        if  ((rows[2][j].childNodes[k].classList!==undefined)&&(rows[2][j].childNodes[k].classList.contains('table-hour_3-block'))||(rows[2][j].childNodes[k].classList!==undefined)&&(rows[2][j].childNodes[k].classList.contains('table-hour_1-block'))){
-                            rows[2][j].childNodes[k].style.background = color;
-                        }
-                    }
-                    }
+            else if (targetcel[1]>=6){
+                colorCells(2, 6, color, 15, true, click, 4);
             }
         break;
 
         case 3:
-            floorLasthours[3].style.background = color;
-            if (click===true) {meetings[5].style.display = 'block';}
-                for (let j = 0; j < 16; j++){
-                rows[3][j].childNodes[1].style.background = color;
-                }
+        colorCells(3, 0, color, 15, true, click, 5);
         break;
 
+        case 4:
+            if (targetcel[1]<=5){
+                colorCells(4, 0, color, 5, false, click, 6);
+                }
+            else if ((targetcel[1]===6)||(targetcel[1]===5)){
+                colorCells(4, 5, color, 6, false, click, 7);
             }
+
+           else  if ((targetcel[1]===8)||(targetcel[1]===9)){
+                colorCells(4, 8, color, 9, false, click, 8);
+            }
+
+            else  if ((targetcel[1]===10)||(targetcel[1]===11)){
+                colorCells(4, 10, color, 11, false, click, 9);
+            }
+            else  if (targetcel[1]>=12){
+                colorCells(4, 12, color, 15, true, click, 10);
+            }
+        break;
+
+        case 5:
+            if (targetcel[1]<=6){
+                colorCells(5, 0, color, 6, false, click, 11);
+            }
+            else if((targetcel[1]===7)||(targetcel[1]===8)){
+                colorCells(5, 7, color, 8, false, click, 12);
+            }
+            else if((targetcel[1]===9)||(targetcel[1]===10)){
+                colorCells(5, 9, color, 10, false, click, 13);
+            }
+            else if(targetcel[1]>=11){
+                colorCells(5, 11, color, 15, true, click, 14);
+            }
+        break;
+
+        case 6:
+            if (targetcel[1]<=5){
+                colorCells(6, 0, color, 5, false, click, 15);
+            }
+            else if((targetcel[1]>=6)&&(targetcel[1]<=9)){
+                colorCells(6, 6, color, 9, false, click, 16);
+            }
+            else if((targetcel[1]===10)||(targetcel[1]===11)){
+                colorCells(6, 10, color, 11, false, click, 17);
+            }
+            else if(targetcel[1]>=14){
+                colorCells(6, 14, color, 15, true, click, 18);
+            }
+        break;
+
+        case 7:
+            if (targetcel[1]<=4){
+                colorCells(7, 0, color, 4, false, click, 19);
+            }
+            else if(targetcel[1]===6){
+                colorCells(7, 6, color, 6, false, click, 20);
+            }
+            else if((targetcel[1]===8)||(targetcel[1]===9)){
+                colorCells(7, 8, color, 9, false, click, 21);
+            }
+            else if((targetcel[1]===10)||(targetcel[1]===11)){
+                colorCells(7, 10, color, 11, false, click, 22);
+            }
+            else if(targetcel[1]>=12){
+                colorCells(7, 12, color, 15, true, click, 23);
+            }
+        break;
+
+        case 8:
+            if (targetcel[1]<=4){
+                colorCells(8, 0, color, 4, false, click, 24);
+            }
+            else if((targetcel[1]>=5)&&(targetcel[1]<=9)){
+                colorCells(8, 5, color, 9, false, click, 25);
+            }
+            else if(targetcel[1]===10){
+                colorCells(8, 10, color, 10, false, click, 26);
+            }
+            else if(targetcel[1]===11){
+                colorCells(8, 11, color, 11, false, click, 27);
+            }
+            else if(targetcel[1]>=12){
+                colorCells(8, 12, color, 15, true, click, 28);
+            }
+        break;
+        }
 }
 function bodyClick(event){
     if ((event.target.id === 'timebar_date1')||(event.target.id === 'timebar_date2')){

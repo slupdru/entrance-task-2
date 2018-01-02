@@ -767,3 +767,6 @@ top:58px;
   margin-right: 0px;
   margin-bottom: 2px;
 }
+.floor_mobile-title.floor_mobile-title_disabled{
+  color: #858E98 ;
+}
