@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,115 +11,111 @@
     <link rel="stylesheet" href="styles/new-meet-mobile.css">
     <title>Document</title>
 </head>
+
 <body class="body-new-meet">
     <header>
         <div class="header_container header_container_meet">
-          <img class="header_logo" src="assets/logo.svg" alt="">
+            <img class="header_logo" src="assets/logo.svg" alt="">
         </div>
     </header>
     <main class="main-new-meet">
         <div class="main_background">
-        <div class="nmeet-container">
-            <div class="title-line">
-                <div class="title-line_title">Новая встреча</div>
-                <a class="title-line_exit-button"><img src="assets/close.svg" alt=""></a>
-            </div>
-            <div class="theme-line">
-                <div class="theme">
-                    <div class="theme_title">Тема</div>
-                    <input class="theme_input" placeholder="О чём будете говорить?" type="text">
+            <div class="nmeet-container">
+                <div class="title-line">
+                    <div class="title-line_title">Новая встреча</div>
+                    <a class="title-line_exit-button">
+                        <img src="assets/close.svg" alt="">
+                    </a>
                 </div>
-                <div class="time">
-                    <div class="date">
-                        <div class="theme_title">Дата</div>
-                        <input class="date_input" value="14 декабря, 2017" type="text">
+                <div class="theme-line">
+                    <div class="theme">
+                        <div class="theme_title">Тема</div>
+                        <input class="theme_input" placeholder="О чём будете говорить?" type="text">
                     </div>
-                    <div class="start-end">
-                        <div class="start-block">
-                            <div class="theme_title">Начало</div>
-                            <input class="start-block_input" value="16:00" type="text">
+                    <div class="time">
+                        <div class="date">
+                            <div class="theme_title">Дата</div>
+                            <input class="date_input" value="14 декабря, 2017" type="text">
                         </div>
-                        <div class="start-end_separator"><span>-</span></div>
-                        <div class="end-block">
-                            <div class="theme_title">Конец</div>
-                            <input class="start-block_input" value="16:30" type="text">
+                        <div class="start-end">
+                            <div class="start-block">
+                                <div class="theme_title">Начало</div>
+                                <input class="start-block_input" value="16:00" type="text">
+                            </div>
+                            <div class="start-end_separator">
+                                <span>-</span>
+                            </div>
+                            <div class="end-block">
+                                <div class="theme_title">Конец</div>
+                                <input class="start-block_input" value="16:30" type="text">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
-            <div class="nmeet-container">
+        <div class="nmeet-container">
             <div class="members-line">
                 <div class="nmeet-container">
-                <div class="members">
-                    
-                    <div class="members_input-block">
-                        <div class="theme_title">Участники</div>
-                        <input id="members_input" class="members_input awesomplete" data-list="Лекс Лютер, Томас Андерсон, Дарт Вейдер, Кларк Кент"  placeholder="Например, Тор Одинович" data-minchars='0' type="text"/>
-                    </div>
-                    <div class="members_show">
-                        <div class="members-show_show-block">
-                            <img
-                              class="membres-show_icon"
-                              src="https://avatars3.githubusercontent.com/u/15365?s=460&v=4"
-                            />
-                            <div class="members-show_name">
-                                veged
-                            </div>
-                            <a
-                              class="members-show_close-icon"
-                            >
-                              <img src="assets/close.svg" />
-                            </a>
-                          </div>
-                          <div class="members-show_show-block">
-                                <img
-                                  class="membres-show_icon"
-                                  src="https://avatars3.githubusercontent.com/u/15365?s=460&v=4"
-                                />
+                    <div class="members">
+
+                        <div class="members_input-block">
+                            <div class="theme_title">Участники</div>
+                            <input id="members_input" class="members_input awesomplete" data-list="Лекс Лютер, Томас Андерсон, Дарт Вейдер, Кларк Кент"
+                                placeholder="Например, Тор Одинович" data-minchars='0' type="text" />
+                        </div>
+                        <div class="members_show">
+                            <div class="members-show_show-block">
+                                <img class="membres-show_icon" src="https://avatars3.githubusercontent.com/u/15365?s=460&v=4" />
                                 <div class="members-show_name">
                                     veged
                                 </div>
-                                <a
-                                  class="members-show_close-icon"
-                                >
-                                  <img src="assets/close.svg" />
+                                <a class="members-show_close-icon">
+                                    <img src="assets/close.svg" />
                                 </a>
-                              </div>
+                            </div>
+                            <div class="members-show_show-block">
+                                <img class="membres-show_icon" src="https://avatars3.githubusercontent.com/u/15365?s=460&v=4" />
+                                <div class="members-show_name">
+                                    veged
+                                </div>
+                                <a class="members-show_close-icon">
+                                    <img src="assets/close.svg" />
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
-                    
-                </div>
                 </div>
                 <div class="members-line_line"></div>
                 <div class="nmeet-container">
-                <div class="select-room">
-                    <div class="theme_title">Рекомендованные переговорки</div>
-                    <div class="select-room_roomblock" id="room1">
-                        <div class="select-room_container" >
-                            <span class="select-room_time">16:00—16:30</span>
-                            <span class="select-room_room">Готем · 4 этаж</span>
+                    <div class="select-room">
+                        <div class="theme_title">Рекомендованные переговорки</div>
+                        <div class="select-room_roomblock" id="room1">
+                            <div class="select-room_container">
+                                <span class="select-room_time">16:00—16:30</span>
+                                <span class="select-room_room">Готем · 4 этаж</span>
+                            </div>
+                            <img class="selct-room_icon" src="assets/close.svg" alt="">
                         </div>
-                        <img class = "selct-room_icon"  src="assets/close.svg" alt="">
-                    </div>
-                    <div class="select-room_roomblock" id="room2">
-                        <div class="select-room_container">
-                            <span class="select-room_time">16:00—16:30</span>
-                            <span class="select-room_room">Поле непаханное · 4 этаж</span>
+                        <div class="select-room_roomblock" id="room2">
+                            <div class="select-room_container">
+                                <span class="select-room_time">16:00—16:30</span>
+                                <span class="select-room_room">Поле непаханное · 4 этаж</span>
+                            </div>
+                            <img class="selct-room_icon" src="assets/close.svg" alt="">
                         </div>
-                        <img class = "selct-room_icon"  src="assets/close.svg" alt="">
-                    </div>
-                    <div class="select-room_roomblock" id="room3">
-                        <div class="select-room_container">
-                            <span class="select-room_time">16:00—16:30</span>
-                            <span class="select-room_room">Тёмная башня · 4 этаж</span>
+                        <div class="select-room_roomblock" id="room3">
+                            <div class="select-room_container">
+                                <span class="select-room_time">16:00—16:30</span>
+                                <span class="select-room_room">Тёмная башня · 4 этаж</span>
+                            </div>
+                            <img class="selct-room_icon" src="assets/close.svg" alt="">
                         </div>
-                        <img class = "selct-room_icon"  src="assets/close.svg" alt="">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </main>
     <footer class="footer-new-meet">
         <div class="message-line">
@@ -132,4 +129,5 @@
     <script src="scripts/awesomplete.js"></script>
     <script src="scripts/new-meet.js"></script>
 </body>
+
 </html>
