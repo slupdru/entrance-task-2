@@ -107,6 +107,8 @@ input::placeholder{
     width: 80px;
     height: 36px;
     text-align: center;
+    text-decoration: none;
+    color: black;
     line-height: 36px;
     margin-right: 16px;
     cursor: pointer;
@@ -172,3 +174,28 @@ input::placeholder{
 .header_button{
     margin-right: 0px;
 }
+.membres-show_icon {
+    height: 24px;
+    width: 24px;
+    border-radius: 100px;
+    margin-right: 8px;
+  }
+  .members_show {
+    display: flex;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .members-show_name {
+    margin-right: 15px;
+  }
+  .members-show_close-icon {
+    margin-right: 9.1px;
+    cursor: pointer;
+  }
+  .members-show_show-block {
+    display: flex;
+    border-radius: 16px;
+    background: #e9ecef;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
